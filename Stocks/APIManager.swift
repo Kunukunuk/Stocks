@@ -17,7 +17,10 @@ class APIManager {
         session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
     }
     
-    func getStockData() {
+    func getStockData(with symbols: String) {
+        
+//        /stock/aapl/batch?types=quote,news,chart&range=1m&last=1
+//        /stock/market/batch?symbols=aapl,fb,tsla&types=quote,news,chart&range=1m&last=5
         
         let apiURL = URL(string: basicURL + "/stock/market/batch?symbols=aapl,fb,tsla&types=quote,news,chart&range=1m&last=5")
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
@@ -31,5 +34,69 @@ class APIManager {
         }
         task.resume()
         
+    }
+    
+    func getStockBook() {
+//        /stock/aapl/book
+    }
+    
+    func getStockCollection() {
+//        /stock/market/collection/sector?collectionName=Health%20Care
+//        /stock/market/collection/tag?collectionName=Computer%20Hardware
+//        /stock/market/collection/list?collectionName=iexvolume
+    }
+    
+    func getStockCharts() {
+//        /stock/aapl/chart
+//        /stock/aapl/chart/5y
+//        /stock/aapl/chart/2y
+//        /stock/aapl/chart/1y
+//        /stock/aapl/chart/ytd
+//        /stock/aapl/chart/6m
+//        /stock/aapl/chart/3m
+//        /stock/aapl/chart/1m
+//        /stock/aapl/chart/1d
+//        /stock/aapl/chart/date/20180129
+//        /stock/aapl/chart/dynamic
+    }
+    
+    func getStockCompany() {
+//        /stock/aapl/company
+    }
+    
+    func getCrypto() {
+//        /stock/market/crypto
+    }
+    
+    func getStockDividends() {
+//        /stock/aapl/dividends/5y
+//        /stock/aapl/dividends/2y
+//        /stock/aapl/dividends/1y
+//        /stock/aapl/dividends/ytd
+//        /stock/aapl/dividends/6m
+//        /stock/aapl/dividends/3m
+//        /stock/aapl/dividends/1m
+    }
+    
+    func getStockEarnings() {
+//        /stock/aapl/earnings
+    }
+    
+    func getIPOs() {
+//        /stock/market/upcoming-ipos
+//        /stock/market/today-ipos
+    }
+    
+    func getTopTradedQuotes() {
+//        /stock/market/list/mostactive
+//        /stock/market/list/gainers
+//        /stock/market/list/losers
+//        /stock/market/list/iexvolume
+//        /stock/market/list/iexpercent
+//        /stock/market/list/infocus
+    }
+    
+    func getCompanyLogo() {
+//        /stock/aapl/logo
     }
 }
