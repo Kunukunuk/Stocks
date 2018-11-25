@@ -99,4 +99,27 @@ class APIManager {
     func getCompanyLogo() {
 //        /stock/aapl/logo
     }
+    
+    func getList() {
+        
+//        /stock/market/list/mostactive
+//        /stock/market/list/gainers
+//        /stock/market/list/losers
+//        /stock/market/list/iexvolume
+//        /stock/market/list/iexpercent
+//        /stock/market/list/infocus
+
+        let apiURL = URL(string: basicURL + "/stock/market/list/gainers")
+        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
+            guard let dataJson = data else {
+                print(error?.localizedDescription)
+                return
+            }
+            let dataArray = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! NSArray
+            
+            print(dataArray)
+        }
+        task.resume()
+        
+    }
 }
