@@ -85,6 +85,21 @@ class APIManager {
     func getIPOs() {
 //        /stock/market/upcoming-ipos
 //        /stock/market/today-ipos
+        
+        let apiURL = URL(string: basicURL + "/stock/market/upcoming-ipos")
+        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
+            guard let dataJson = data else {
+                print(error?.localizedDescription)
+                return
+            }
+            let dataDictionary = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
+            
+            let rawData = dataDictionary["rawData"] as! NSArray
+            let viewData = dataDictionary["viewData"] as! NSArray
+            print(rawData)
+            print(viewData)
+        }
+        task.resume()
     }
     
     func getTopTradedQuotes() {
