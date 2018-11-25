@@ -66,6 +66,17 @@ class APIManager {
     
     func getCrypto() {
 //        /stock/market/crypto
+        let apiURL = URL(string: basicURL + "/stock/market/crypto")
+        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
+            guard let dataJson = data else {
+                print(error?.localizedDescription)
+                return
+            }
+            let dataArray = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! NSArray
+            
+            print(dataArray)
+        }
+        task.resume()
     }
     
     func getStockDividends() {
