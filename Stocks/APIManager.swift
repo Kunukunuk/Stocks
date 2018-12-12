@@ -148,4 +148,24 @@ class APIManager {
         task.resume()
         
     }
+    
+    func getStockNew() {
+        
+        let apiURL = URL(string: "https://financialmodelingprep.com/api/stock/actives")
+        
+        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
+            guard let dataJson = data else {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            print(response)
+            print(dataJson)
+            let dataDictionary = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
+            
+            print(dataDictionary)
+        }
+        
+        task.resume()
+    }
 }
