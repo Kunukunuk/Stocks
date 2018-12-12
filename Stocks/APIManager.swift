@@ -159,11 +159,10 @@ class APIManager {
                 return
             }
             
-            print(response)
-            print(dataJson)
-            let dataDictionary = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
+            let decodeData = String(data: dataJson, encoding: .utf8)!
             
-            print(dataDictionary)
+            print(decodeData)
+            
         }
         
         task.resume()
