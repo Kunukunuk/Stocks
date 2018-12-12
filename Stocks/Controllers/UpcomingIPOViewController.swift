@@ -36,7 +36,7 @@ class UpcomingIPOViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func getUpcomingIPOs() {
-        APIManager().getIPOs { (ipos, error) in
+        APIManager().getUpcomingIPOs { (ipos, error) in
             if error == nil {
                 self.IPOs = ipos!
             }
