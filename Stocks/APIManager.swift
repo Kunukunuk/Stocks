@@ -136,7 +136,6 @@ class APIManager {
             let viewData = dataDictionary["viewData"] as! NSArray
             for each in viewData {
                 let dictionary = each as! [String: Any]
-                print(dictionary)
                 let ipo = IPOData(viewData: dictionary)
                 IPOs.append(ipo)
             }
