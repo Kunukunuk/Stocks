@@ -113,15 +113,6 @@ class APIManager {
         task.resume()
     }
     
-    func getTopTradedQuotes() {
-//        /stock/market/list/mostactive
-//        /stock/market/list/gainers
-//        /stock/market/list/losers
-//        /stock/market/list/iexvolume
-//        /stock/market/list/iexpercent
-//        /stock/market/list/infocus
-    }
-    
     func getCompanyLogo() {
 //        /stock/aapl/logo
     }
@@ -158,7 +149,6 @@ class APIManager {
                 print(error?.localizedDescription)
                 return
             }
-            
             let decodeData = String(data: dataJson, encoding: .utf8)!
             
             print(decodeData)
