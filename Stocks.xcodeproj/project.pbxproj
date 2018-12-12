@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1298BC21C18BB100408DCF /* UpcomingIPOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1298BB21C18BB100408DCF /* UpcomingIPOViewController.swift */; };
+		0D1298BE21C18BD100408DCF /* TodayIPOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1298BD21C18BD100408DCF /* TodayIPOViewController.swift */; };
 		0D76377D21A8E17300A5362D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D76377C21A8E17300A5362D /* AppDelegate.swift */; };
 		0D76377F21A8E17300A5362D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D76377E21A8E17300A5362D /* ViewController.swift */; };
 		0D76378221A8E17300A5362D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D76378021A8E17300A5362D /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1298BB21C18BB100408DCF /* UpcomingIPOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingIPOViewController.swift; sourceTree = "<group>"; };
+		0D1298BD21C18BD100408DCF /* TodayIPOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayIPOViewController.swift; sourceTree = "<group>"; };
 		0D76377921A8E17300A5362D /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D76377C21A8E17300A5362D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D76377E21A8E17300A5362D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +41,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1298BA21C18B4900408DCF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D76377E21A8E17300A5362D /* ViewController.swift */,
+				0D1298BB21C18BB100408DCF /* UpcomingIPOViewController.swift */,
+				0D1298BD21C18BD100408DCF /* TodayIPOViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		0D76377021A8E17300A5362D = {
 			isa = PBXGroup;
 			children = (
@@ -57,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				0D76377C21A8E17300A5362D /* AppDelegate.swift */,
-				0D76377E21A8E17300A5362D /* ViewController.swift */,
+				0D1298BA21C18B4900408DCF /* ViewControllers */,
 				0D76378E21A8E1A200A5362D /* APIManager.swift */,
 				0D76378021A8E17300A5362D /* Main.storyboard */,
 				0D76378321A8E17500A5362D /* Assets.xcassets */,
@@ -140,7 +154,9 @@
 			files = (
 				0D76378F21A8E1A200A5362D /* APIManager.swift in Sources */,
 				0D76377F21A8E17300A5362D /* ViewController.swift in Sources */,
+				0D1298BE21C18BD100408DCF /* TodayIPOViewController.swift in Sources */,
 				0D76377D21A8E17300A5362D /* AppDelegate.swift in Sources */,
+				0D1298BC21C18BB100408DCF /* UpcomingIPOViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

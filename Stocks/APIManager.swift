@@ -107,7 +107,7 @@ class APIManager {
             
             let rawData = dataDictionary["rawData"] as! NSArray
             let viewData = dataDictionary["viewData"] as! NSArray
-            print(rawData)
+            print(rawData, " *** ")
             print(viewData)
         }
         task.resume()
