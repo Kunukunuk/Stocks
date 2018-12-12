@@ -12,6 +12,7 @@ Uses the IExTrading API to get data to display stcoks in a list
 
 Here's a walkthrough of implemented user stories:
 
+![stocksiex](https://user-images.githubusercontent.com/28847045/49899194-05d8ab00-fe29-11e8-958c-d968f93fbf13.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
