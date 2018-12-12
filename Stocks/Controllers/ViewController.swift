@@ -13,9 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        APIManager().getIPOs()
+        //APIManager().getIPOs()
     }
 
-
+    @IBAction func seeIPOS(_ sender: UIButton) {
+        print("hello")
+    }
+    
 }
 

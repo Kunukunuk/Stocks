@@ -17,6 +17,17 @@ class IPOCell: UITableViewCell {
     @IBOutlet weak var shareAmountLabel: UILabel!
     @IBOutlet weak var marketLabel: UILabel!
     
+    var ipo: IPOData? {
+        didSet {
+            companyLabel.text = ipo?.companyName
+            dateOfIPOLabel.text = "Date: \(ipo?.expectedDate ?? "No Date")"
+            companySymbolLabel.text = "Symbol: \(ipo?.symbol ?? "No Symbol")"
+            priceLabel.text = "Price: \(ipo?.price ?? "No Price")"
+            shareAmountLabel.text = "Shares: \(ipo?.amount ?? "0")"
+            marketLabel.text = "Market: \(ipo?.market ?? "no")"
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

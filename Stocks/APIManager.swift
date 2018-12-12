@@ -93,22 +93,28 @@ class APIManager {
 //        /stock/aapl/earnings
     }
     
-    func getIPOs() {
+    func getIPOs(completion: @escaping ([IPOData]?, Error?) -> ()) {
 //        /stock/market/upcoming-ipos
 //        /stock/market/today-ipos
+        var IPOs: [IPOData] = []
         
         let apiURL = URL(string: basicURL + "/stock/market/upcoming-ipos")
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             guard let dataJson = data else {
                 print(error?.localizedDescription)
+                completion(nil, error)
                 return
             }
             let dataDictionary = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
             
-            let rawData = dataDictionary["rawData"] as! NSArray
+            //let rawData = dataDictionary["rawData"] as! NSArray
             let viewData = dataDictionary["viewData"] as! NSArray
-            print(rawData, " *** ")
-            print(viewData)
+            for each in viewData {
+                let dictionary = each as! [String: Any]
+                let ipo = IPOData(viewData: dictionary)
+                IPOs.append(ipo)
+            }
+            completion(IPOs, nil)
         }
         task.resume()
     }
