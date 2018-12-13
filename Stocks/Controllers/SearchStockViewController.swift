@@ -22,9 +22,13 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
         return stockSymbols[row].stockSymbol
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selected = stockSymbols[row]
+    }
 
     @IBOutlet weak var pickerView: UIPickerView!
     var stockSymbols: [StockSymbols] = []
+    var selected: StockSymbols?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,19 +45,22 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 self.stockSymbols = stocks!
                 DispatchQueue.main.sync {
                     self.pickerView.reloadAllComponents()
+                    self.selected = self.stockSymbols[0]
                 }
             }
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func searchStock(_ sender: UIButton) {
+        //searchedStock
+        print(selected)
+        
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "searchedStock" {
+            
+        }
+    }
 
 }
