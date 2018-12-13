@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="acC-Uq-iEq">
+            <objects>
+                <viewController id="hGj-RO-cWK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E0y-XT-kNY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="EgS-KZ-vF1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgH-mU-i48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="-663"/>
+        </scene>
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,17 +34,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x55-xx-n89">
-                                <rect key="frame" x="149" y="330.5" width="77" height="70"/>
+                                <rect key="frame" x="129" y="310.5" width="117" height="110"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr0-WL-aZx">
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="30"/>
+                                        <state key="normal" title="Search Company"/>
+                                        <connections>
+                                            <segue destination="hGj-RO-cWK" kind="show" id="zr5-QX-I7r"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9B-WZ-2oO">
-                                        <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
+                                        <rect key="frame" x="0.0" y="40" width="117" height="30"/>
                                         <state key="normal" title="See IPOs"/>
                                         <connections>
                                             <segue destination="YI0-Jh-aVv" kind="show" id="T3S-Bg-3lB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnT-K2-BuC">
-                                        <rect key="frame" x="0.0" y="40" width="77" height="30"/>
+                                        <rect key="frame" x="0.0" y="80" width="117" height="30"/>
                                         <state key="normal" title="See Crypto"/>
                                         <connections>
                                             <segue destination="wHI-g6-1eB" kind="show" id="acb-dm-F8T"/>

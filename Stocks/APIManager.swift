@@ -22,7 +22,7 @@ class APIManager {
 //        /stock/aapl/batch?types=quote,news,chart&range=1m&last=1
 //        /stock/market/batch?symbols=aapl,fb,tsla&types=quote,news,chart&range=1m&last=5
         
-        let apiURL = URL(string: basicURL + "/stock/market/batch?symbols=aapl,fb,tsla&types=quote,news,chart&range=1m&last=5")
+        let apiURL = URL(string: basicURL + "/stock/\(symbols)/batch?types=quote,news,chart&range=1m&last=1")
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             guard let dataJson = data else {
                 print(error?.localizedDescription)
