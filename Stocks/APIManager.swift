@@ -17,6 +17,24 @@ class APIManager {
         session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
     }
     
+    func getAllStockSymbols() {
+        //    /ref-data/symbols
+        
+        let apiURL = URL(string: basicURL + "/ref-data/symbols")
+        
+        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
+            guard let dataJson = data else {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            let dataArray = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! NSArray
+            
+            print(dataArray)
+        }
+        task.resume()
+    }
+    
     func getStockData(with symbols: String) {
         
 //        /stock/aapl/batch?types=quote,news,chart&range=1m&last=1
