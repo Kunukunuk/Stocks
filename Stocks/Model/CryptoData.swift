@@ -10,39 +10,42 @@ import Foundation
 
 class CryptoData {
 
-    var askPrice: String?
-    var askSize: String?
-    var bidPrice: String?
-    var bidSize: String?
-    var change: String?
-    var changePercent: String?
-    var close: String?
+    var askPrice: Double?
+    var askSize: Double?
+    var bidPrice: Double?
+    var bidSize: Double?
+    var change: Double?
+    var changePercent: Double?
+    var close: Double?
     var companyName: String?
-    var high: String?
-    var low: String?
-    var latestPrice: String?
-    var latestTime: String?
-    var latestVolume: String?
-    var open: String?
-    var previousClose: String?
+    var high: Double?
+    var low: Double?
+    var latestPrice: Double?
+    var latestTime: Double?
+    var latestVolume: Double?
+    var open: Double?
+    var previousClose: Double?
     var symbol: String?
 
     init(crypto: [String: Any]) {
-        askPrice = crypto["askPrice"] as? String
-        askSize = crypto["askSize"] as? String
-        bidPrice = crypto["bidPrice"] as? String
-        bidSize = crypto["bidSize"] as? String
-        change = crypto["change"] as? String
-        changePercent = crypto["changePercent"] as? String
-        close = crypto["close"] as? String
+        
+        print(crypto)
+        
+        askPrice = crypto["askPrice"] as? Double
+        askSize = crypto["askSize"] as? Double
+        bidPrice = crypto["bidPrice"] as? Double
+        bidSize = crypto["bidSize"] as? Double
+        change = crypto["change"] as? Double
+        changePercent = crypto["changePercent"] as? Double
+        close = crypto["close"] as? Double
         companyName = crypto["companyName"] as? String
-        high = crypto["high"] as? String
-        low = crypto["low"] as? String
-        latestPrice = crypto["latestPrice"] as? String
-        latestTime = crypto["latestTime"] as? String
-        latestVolume = crypto["latestVolume"] as? String
-        open = crypto["open"] as? String
-        previousClose = crypto["previousClose"] as? String
+        high = crypto["high"] as? Double
+        low = crypto["low"] as? Double
+        latestPrice = crypto["latestPrice"] as? Double
+        latestTime = crypto["latestTime"] as? Double
+        latestVolume = crypto["latestVolume"] as? Double
+        open = crypto["open"] as? Double
+        previousClose = crypto["previousClose"] as? Double
         symbol = crypto["symbol"] as? String
     }
 }

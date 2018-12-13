@@ -25,6 +25,26 @@ class CryptoCell: UITableViewCell {
     @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var changePercentLabel: UILabel!
 
+    var cry: CryptoData? {
+        didSet {
+        
+            companySymbolLabel.text = (" \(cry?.companyName ?? "") (\(cry?.symbol ?? ""))")
+            openLabel.text = ("Open: \(cry?.open ?? 0)")
+            closeLabel.text = ("Close: \(cry?.close ?? 0)")
+            previousCloseLabel.text = ("Previous: \(cry?.previousClose ?? 0)")
+            latestPriceLabel.text = ("Latest$: \(cry?.latestPrice ?? 0)")
+            latestVolumeLabel.text = ("LastestVol: \(cry?.latestVolume ?? 0)")
+            highLabel.text = ("High: \(cry?.high ?? 0)")
+            lowLabel.text = ("Low: \(cry?.low ?? 0)")
+            askPriceLabel.text = ("Ask$: \(cry?.askPrice ?? 0)")
+            askSizeLabel.text = ("AskSize: \(cry?.askSize ?? 0)")
+            bidSizeLabel.text = ("BidSize: \(cry?.bidSize ?? 0)")
+            bidPriceLabel.text = ("Bid$: \(cry?.bidPrice ?? 0)")
+            changeLabel.text = ("Change: \(cry?.change ?? 0)")
+            changePercentLabel.text = ("Change%: \(cry?.changePercent ?? 0)")
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

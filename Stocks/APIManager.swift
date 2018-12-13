@@ -64,17 +64,25 @@ class APIManager {
 //        /stock/aapl/company
     }
     
-    func getCrypto() {
+    func getCrypto(completion: @escaping ([CryptoData]?, Error?) -> ()) {
 //        /stock/market/crypto
+        var cryptos: [CryptoData] = []
         let apiURL = URL(string: basicURL + "/stock/market/crypto")
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             guard let dataJson = data else {
                 print(error?.localizedDescription)
+                completion(nil, error)
                 return
             }
             let dataArray = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! NSArray
             
-            print(dataArray)
+            for each in dataArray {
+                let dict = each as! [String: Any]
+                let crypto = CryptoData(crypto: dict)
+                cryptos.append(crypto)
+            }
+            completion(cryptos, nil)
+            //print(dataArray)
         }
         task.resume()
     }
