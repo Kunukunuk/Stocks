@@ -171,21 +171,4 @@ class APIManager {
         
     }
     
-    func getStockNew() {
-        
-        let apiURL = URL(string: "https://financialmodelingprep.com/api/stock/actives")
-        
-        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
-            guard let dataJson = data else {
-                print(error?.localizedDescription)
-                return
-            }
-            let decodeData = String(data: dataJson, encoding: .utf8)!
-            
-            print(decodeData)
-            
-        }
-        
-        task.resume()
-    }
 }
