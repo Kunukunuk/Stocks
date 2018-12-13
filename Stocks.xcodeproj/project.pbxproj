@@ -20,6 +20,8 @@
 		0D76378421A8E17500A5362D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D76378321A8E17500A5362D /* Assets.xcassets */; };
 		0D76378721A8E17500A5362D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D76378521A8E17500A5362D /* LaunchScreen.storyboard */; };
 		0D76378F21A8E1A200A5362D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D76378E21A8E1A200A5362D /* APIManager.swift */; };
+		0DF5526321C2E5C1005883F7 /* StockSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5526221C2E5C1005883F7 /* StockSymbols.swift */; };
+		0DF5526521C2E7A9005883F7 /* SearchStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5526421C2E7A9005883F7 /* SearchStockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		0D76378621A8E17500A5362D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D76378821A8E17500A5362D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D76378E21A8E1A200A5362D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0DF5526221C2E5C1005883F7 /* StockSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbols.swift; sourceTree = "<group>"; };
+		0DF5526421C2E7A9005883F7 /* SearchStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 				0D1298BB21C18BB100408DCF /* UpcomingIPOViewController.swift */,
 				0D1298BD21C18BD100408DCF /* TodayIPOViewController.swift */,
 				0D1298C921C1B49500408DCF /* CryptoViewController.swift */,
+				0DF5526421C2E7A9005883F7 /* SearchStockViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 			children = (
 				0D1298C121C1911E00408DCF /* IPOData.swift */,
 				0D1298C521C1B2FF00408DCF /* CryptoData.swift */,
+				0DF5526221C2E5C1005883F7 /* StockSymbols.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,8 +189,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF5526321C2E5C1005883F7 /* StockSymbols.swift in Sources */,
 				0D76378F21A8E1A200A5362D /* APIManager.swift in Sources */,
 				0D76377F21A8E17300A5362D /* ViewController.swift in Sources */,
+				0DF5526521C2E7A9005883F7 /* SearchStockViewController.swift in Sources */,
 				0D1298C821C1B47900408DCF /* CryptoCell.swift in Sources */,
 				0D1298CA21C1B49500408DCF /* CryptoViewController.swift in Sources */,
 				0D1298BE21C18BD100408DCF /* TodayIPOViewController.swift in Sources */,

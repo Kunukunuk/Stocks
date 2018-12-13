@@ -17,20 +17,27 @@ class APIManager {
         session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
     }
     
-    func getAllStockSymbols() {
+    func getAllStockSymbols(completion: @escaping ([StockSymbols]?, Error?) -> ()) {
         //    /ref-data/symbols
         
+        var stockS: [StockSymbols] = []
         let apiURL = URL(string: basicURL + "/ref-data/symbols")
         
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             guard let dataJson = data else {
                 print(error?.localizedDescription)
+                completion(nil, error)
                 return
             }
             
             let dataArray = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! NSArray
             
-            print(dataArray)
+            for each in dataArray {
+                let stockDict = each as! [String: Any]
+                let stock = StockSymbols(stockDict: stockDict)
+                stockS.append(stock)
+            }
+            completion(stockS, nil)
         }
         task.resume()
     }

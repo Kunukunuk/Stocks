@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search Stock View Controller-->
         <scene sceneID="acC-Uq-iEq">
             <objects>
-                <viewController id="hGj-RO-cWK" sceneMemberID="viewController">
+                <viewController id="hGj-RO-cWK" customClass="SearchStockViewController" customModule="Stocks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E0y-XT-kNY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,19 +28,28 @@
                                 <rect key="frame" x="20" y="390.5" width="335" height="30"/>
                                 <state key="normal" title="Search"/>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OB9-NO-j83">
+                                <rect key="frame" x="5" y="69" width="365" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GLX-rD-x4u" firstAttribute="centerY" secondItem="EgS-KZ-vF1" secondAttribute="centerY" id="Fl6-qW-6gC"/>
                             <constraint firstItem="GLX-rD-x4u" firstAttribute="centerX" secondItem="EgS-KZ-vF1" secondAttribute="centerX" id="Jaa-BO-iJD"/>
+                            <constraint firstItem="OB9-NO-j83" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="5" id="Klw-fj-RkT"/>
                             <constraint firstItem="OVe-V5-kSI" firstAttribute="top" secondItem="GLX-rD-x4u" secondAttribute="bottom" constant="10" id="P8d-ze-KPK"/>
                             <constraint firstItem="OVe-V5-kSI" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="20" id="PrB-3B-3Wr"/>
                             <constraint firstItem="EgS-KZ-vF1" firstAttribute="trailing" secondItem="OVe-V5-kSI" secondAttribute="trailing" constant="20" id="ZIF-RU-VeZ"/>
+                            <constraint firstAttribute="trailing" secondItem="OB9-NO-j83" secondAttribute="trailing" constant="5" id="c0B-CR-L2j"/>
+                            <constraint firstItem="OB9-NO-j83" firstAttribute="top" secondItem="EgS-KZ-vF1" secondAttribute="top" constant="5" id="hwb-vZ-5gH"/>
                             <constraint firstItem="GLX-rD-x4u" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="5" id="mfU-G2-dKi"/>
                             <constraint firstItem="EgS-KZ-vF1" firstAttribute="trailing" secondItem="GLX-rD-x4u" secondAttribute="trailing" constant="5" id="nqg-Kn-chH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EgS-KZ-vF1"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="OB9-NO-j83" id="s66-Bv-dDJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgH-mU-i48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
