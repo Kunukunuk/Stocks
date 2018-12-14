@@ -64,7 +64,8 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showStock" {
-            
+            let destinationVC = segue.destination as! ShowStockViewController
+            destinationVC.stockInfo = self.selected
         } else if segue.identifier == "searchStock" {
             
         }

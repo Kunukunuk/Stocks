@@ -10,10 +10,13 @@ import UIKit
 
 class ShowStockViewController: UIViewController {
 
+    var stockInfo: StockSymbols?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print(stockInfo?.stockName)
     }
     
 
