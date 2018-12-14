@@ -68,6 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="OB9-NO-j83" id="s66-Bv-dDJ"/>
+                        <outlet property="searchTextField" destination="GLX-rD-x4u" id="BWz-EG-B8f"/>
                         <segue destination="pf9-c7-gua" kind="show" identifier="searchStock" id="7mG-b9-fd6"/>
                         <segue destination="bMt-HF-uQf" kind="show" identifier="showStock" id="MHs-cE-HJl"/>
                     </connections>

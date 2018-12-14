@@ -29,6 +29,7 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var pickerView: UIPickerView!
     var stockSymbols: [StockSymbols] = []
     var selected: StockSymbols?
+    @IBOutlet weak var searchTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +53,19 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     @IBAction func searchStock(_ sender: UIButton) {
-        //searchedStock
-        print(selected)
+        
+        if searchTextField.text == "" {
+            performSegue(withIdentifier: "showStock", sender: self)
+        } else {
+            performSegue(withIdentifier: "searchStock", sender: self)
+        }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "searchedStock" {
+        if segue.identifier == "showStock" {
+            
+        } else if segue.identifier == "searchStock" {
             
         }
     }
