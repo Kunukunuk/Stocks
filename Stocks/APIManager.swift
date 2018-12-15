@@ -55,7 +55,11 @@ class APIManager {
             }
             let dataDictionary = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
             
-            print(dataDictionary)
+            let chart = dataDictionary["chart"] as! NSArray
+            let quote = dataDictionary["quote"] as! [String: Any]
+            let news = dataDictionary["news"] as! NSArray
+            
+            print("\(chart) \n****** \(quote) \n***** \(news)")
         }
         task.resume()
         

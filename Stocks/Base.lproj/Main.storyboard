@@ -90,7 +90,20 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vk5-vj-W5O" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-rH-ERd">
+                                                <rect key="frame" x="10" y="0.0" width="355" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="cMo-rH-ERd" firstAttribute="top" secondItem="vk5-vj-W5O" secondAttribute="top" id="4SY-WM-5bp"/>
+                                            <constraint firstAttribute="trailing" secondItem="cMo-rH-ERd" secondAttribute="trailing" constant="10" id="6fb-oG-OWN"/>
+                                            <constraint firstItem="cMo-rH-ERd" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="sog-Kp-HbC"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -103,7 +116,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vk5-vj-W5O" firstAttribute="width" secondItem="ddq-8n-Njm" secondAttribute="width" priority="250" id="0Mb-qs-Ygw"/>
+                            <constraint firstItem="vk5-vj-W5O" firstAttribute="width" secondItem="ddq-8n-Njm" secondAttribute="width" id="0Mb-qs-Ygw"/>
                             <constraint firstItem="vk5-vj-W5O" firstAttribute="height" secondItem="ddq-8n-Njm" secondAttribute="height" priority="250" id="4ca-bu-2P4"/>
                             <constraint firstItem="BwI-Sc-3Z3" firstAttribute="top" secondItem="ddq-8n-Njm" secondAttribute="top" id="839-ih-7et"/>
                             <constraint firstItem="ddq-8n-Njm" firstAttribute="width" secondItem="jgS-ci-Jr9" secondAttribute="width" id="GFF-zy-F2m"/>
