@@ -16,7 +16,8 @@ class ShowStockViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(stockInfo?.stockName)
+        self.title = stockInfo?.stockSymbol
+        
     }
     
 
