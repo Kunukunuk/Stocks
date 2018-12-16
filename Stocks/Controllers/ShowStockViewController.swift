@@ -10,6 +10,8 @@ import UIKit
 
 class ShowStockViewController: UIViewController {
 
+    
+    @IBOutlet weak var companyNameLabel: UILabel!
     var stockInfo: StockSymbols?
     
     override func viewDidLoad() {
@@ -17,7 +19,7 @@ class ShowStockViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = stockInfo?.stockSymbol
-        
+        companyNameLabel.text = stockInfo?.stockName
     }
     
 
