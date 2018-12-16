@@ -13,11 +13,11 @@ class ShowStockViewController: UIViewController {
     
     @IBOutlet weak var companyNameLabel: UILabel!
     var stockInfo: StockSymbols?
+    @IBOutlet weak var priceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.title = stockInfo?.stockSymbol
         companyNameLabel.text = stockInfo?.stockName
     }
