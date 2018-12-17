@@ -232,16 +232,25 @@
                                                     <action selector="getNews:" destination="bMt-HF-uQf" eventType="touchUpInside" id="9el-0Q-94z"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhk-mV-R7e">
+                                                <rect key="frame" x="10" y="329" width="355" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="fhk-mV-R7e" firstAttribute="top" secondItem="zlZ-Wj-BwB" secondAttribute="bottom" constant="10" id="1nN-7o-15R"/>
                                             <constraint firstItem="cMo-rH-ERd" firstAttribute="top" secondItem="vk5-vj-W5O" secondAttribute="top" id="4SY-WM-5bp"/>
                                             <constraint firstAttribute="trailing" secondItem="cMo-rH-ERd" secondAttribute="trailing" constant="10" id="6fb-oG-OWN"/>
                                             <constraint firstItem="j9O-cI-7Te" firstAttribute="top" secondItem="TYM-wO-KOD" secondAttribute="bottom" constant="5" id="I7t-Zh-yOi"/>
+                                            <constraint firstItem="fhk-mV-R7e" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="Ntv-i9-BYN"/>
                                             <constraint firstAttribute="trailing" secondItem="TYM-wO-KOD" secondAttribute="trailing" constant="10" id="WJm-ml-oVW"/>
                                             <constraint firstAttribute="trailing" secondItem="zlZ-Wj-BwB" secondAttribute="trailing" constant="10" id="YeZ-NU-J9f"/>
                                             <constraint firstItem="j9O-cI-7Te" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="b5L-np-tVv"/>
                                             <constraint firstItem="TYM-wO-KOD" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="fMa-XK-bBv"/>
+                                            <constraint firstAttribute="trailing" secondItem="fhk-mV-R7e" secondAttribute="trailing" constant="10" id="jEa-SW-bSk"/>
                                             <constraint firstItem="TYM-wO-KOD" firstAttribute="top" secondItem="cMo-rH-ERd" secondAttribute="bottom" id="ohb-Xq-JYV"/>
                                             <constraint firstItem="zlZ-Wj-BwB" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="rvV-vI-Dw9"/>
                                             <constraint firstItem="cMo-rH-ERd" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="sog-Kp-HbC"/>
