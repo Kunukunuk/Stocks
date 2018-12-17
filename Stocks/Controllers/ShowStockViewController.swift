@@ -35,6 +35,8 @@ class ShowStockViewController: UIViewController {
 
         self.title = stockInfo?.stockSymbol
         companyNameLabel.text = stockInfo?.stockName
+        
+        getStockInfos()
     }
     
     
@@ -46,6 +48,8 @@ class ShowStockViewController: UIViewController {
                 DispatchQueue.main.sync {
                     self.fillTheInformations()
                 }
+            } else {
+                print("error : \(error?.localizedDescription)")
             }
         }
     }
@@ -54,6 +58,17 @@ class ShowStockViewController: UIViewController {
         let quote = (stockData?.stockQuote)!
         
         openLabel.text = "Open: \(quote["open"] as! Double)"
+        highLabel.text = "High: \(quote["high"] as! Double)"
+        lowLabel.text = "Low: \(quote["low"] as! Double)"
+        weekHighLabel.text = "52WKHigh: \(quote["week52High"] as! Double)"
+        weekLowLabel.text = "52WKLow: \(quote["week52Low"] as! Double)"
+        volumeLabel.text = "LatestVol: \(quote["latestVolume"] as! Int)"
+        avgVolLabel.text = "AVGVol: \(quote["avgTotalVolume"] as! Int)"
+        mktCapLabel.text = "MKT Cap: \(quote["marketCap"] as! Int)"
+        peRatioLabel.text = "PE Ratio: \(quote["peRatio"] as! Double)"
+        ytdChangeLabel.text = "YTD Change: \(quote["ytdChange"] as! Double)"
+        sectorLabel.text = "Sector: \(quote["sector"] as! String)"
+        exchangeLabel.text = "Exchange: \(quote["primaryExchange"] as! String)"
     }
 
     /*
