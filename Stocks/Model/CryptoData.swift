@@ -29,8 +29,6 @@ class CryptoData {
 
     init(crypto: [String: Any]) {
         
-        print(crypto)
-        
         askPrice = crypto["askPrice"] as? Double
         askSize = crypto["askSize"] as? Double
         bidPrice = crypto["bidPrice"] as? Double
