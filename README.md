@@ -7,6 +7,8 @@ Time spent: **25** hours spent in total
 Uses the IExTrading API to get data to display stcoks in a list
 
 - [X] Get current and upcoming IPOs
+- [X] Get current cryptocurrency
+- [ ] See stock information and search for stocks
 
 ## Video Walkthrough
 
