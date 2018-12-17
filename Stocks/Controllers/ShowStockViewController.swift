@@ -15,6 +15,19 @@ class ShowStockViewController: UIViewController {
     var stockInfo: StockSymbols?
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var openLabel: UILabel!
+    @IBOutlet weak var highLabel: UILabel!
+    @IBOutlet weak var lowLabel: UILabel!
+    @IBOutlet weak var weekHighLabel: UILabel!
+    @IBOutlet weak var weekLowLabel: UILabel!
+    @IBOutlet weak var volumeLabel: UILabel!
+    @IBOutlet weak var avgVolLabel: UILabel!
+    @IBOutlet weak var mktCapLabel: UILabel!
+    @IBOutlet weak var peRatioLabel: UILabel!
+    @IBOutlet weak var ytdChangeLabel: UILabel!
+    @IBOutlet weak var sectorLabel: UILabel!
+    @IBOutlet weak var exchangeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

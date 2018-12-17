@@ -256,8 +256,20 @@
                         <viewLayoutGuide key="safeArea" id="ddq-8n-Njm"/>
                     </view>
                     <connections>
+                        <outlet property="avgVolLabel" destination="fdJ-uU-GQG" id="Zin-vy-0jn"/>
                         <outlet property="companyNameLabel" destination="cMo-rH-ERd" id="fzO-Dg-hcl"/>
+                        <outlet property="exchangeLabel" destination="pKm-38-6Ot" id="sGR-qW-Qxx"/>
+                        <outlet property="highLabel" destination="7wu-FA-oht" id="tir-7y-W2Q"/>
+                        <outlet property="lowLabel" destination="pJo-hw-fYh" id="Tyy-Qt-eFy"/>
+                        <outlet property="mktCapLabel" destination="9Jf-b6-qYp" id="OVW-vh-byo"/>
+                        <outlet property="openLabel" destination="jrN-63-uA7" id="rFJ-iM-wq0"/>
+                        <outlet property="peRatioLabel" destination="z7y-sK-jg0" id="IuM-3h-wFn"/>
                         <outlet property="priceLabel" destination="TYM-wO-KOD" id="0I3-BD-fTn"/>
+                        <outlet property="sectorLabel" destination="5Ni-Wm-eHo" id="MR4-sI-4QY"/>
+                        <outlet property="volumeLabel" destination="s1q-Fs-7GJ" id="iQW-Qv-Ib5"/>
+                        <outlet property="weekHighLabel" destination="7tL-Uo-R9b" id="o2L-gh-qhS"/>
+                        <outlet property="weekLowLabel" destination="KPp-ce-2Oe" id="50d-3t-Qbv"/>
+                        <outlet property="ytdChangeLabel" destination="iB6-sP-sOS" id="Np3-21-X3d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4g-k5-jYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
