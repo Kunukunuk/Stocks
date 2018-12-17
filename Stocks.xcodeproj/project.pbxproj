@@ -118,13 +118,21 @@
 				0D1298C321C1912B00408DCF /* View */,
 				0D1298C421C1914800408DCF /* Model */,
 				0D1298BA21C18B4900408DCF /* Controllers */,
-				0D76378E21A8E1A200A5362D /* APIManager.swift */,
+				0D79F83021C743A4008EDE53 /* API */,
 				0D76378021A8E17300A5362D /* Main.storyboard */,
 				0D76378321A8E17500A5362D /* Assets.xcassets */,
 				0D76378521A8E17500A5362D /* LaunchScreen.storyboard */,
 				0D76378821A8E17500A5362D /* Info.plist */,
 			);
 			path = Stocks;
+			sourceTree = "<group>";
+		};
+		0D79F83021C743A4008EDE53 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0D76378E21A8E1A200A5362D /* APIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
