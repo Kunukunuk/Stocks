@@ -71,6 +71,26 @@ class ShowStockViewController: UIViewController {
         exchangeLabel.text = "Exchange: \(quote["primaryExchange"] as? String ?? "")"
     }
 
+    @IBAction func getNews(_ sender: UIButton) {
+        let news = (stockData?.stockNews)!
+        let new = news[0] as! [String: Any]
+        
+        let url = new["url"] as? String ?? ""
+        
+        guard let openURL = URL(string: url) else {
+            return
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(openURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(openURL)
+        }
+        
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

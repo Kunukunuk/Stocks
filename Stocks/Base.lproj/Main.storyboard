@@ -225,6 +225,13 @@
                                                     <constraint firstItem="iB6-sP-sOS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KPp-ce-2Oe" secondAttribute="trailing" constant="10" id="w5s-hC-nui"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlZ-Wj-BwB">
+                                                <rect key="frame" x="10" y="289" width="355" height="30"/>
+                                                <state key="normal" title="News"/>
+                                                <connections>
+                                                    <action selector="getNews:" destination="bMt-HF-uQf" eventType="touchUpInside" id="9el-0Q-94z"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -232,11 +239,14 @@
                                             <constraint firstAttribute="trailing" secondItem="cMo-rH-ERd" secondAttribute="trailing" constant="10" id="6fb-oG-OWN"/>
                                             <constraint firstItem="j9O-cI-7Te" firstAttribute="top" secondItem="TYM-wO-KOD" secondAttribute="bottom" constant="5" id="I7t-Zh-yOi"/>
                                             <constraint firstAttribute="trailing" secondItem="TYM-wO-KOD" secondAttribute="trailing" constant="10" id="WJm-ml-oVW"/>
+                                            <constraint firstAttribute="trailing" secondItem="zlZ-Wj-BwB" secondAttribute="trailing" constant="10" id="YeZ-NU-J9f"/>
                                             <constraint firstItem="j9O-cI-7Te" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="b5L-np-tVv"/>
                                             <constraint firstItem="TYM-wO-KOD" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="fMa-XK-bBv"/>
                                             <constraint firstItem="TYM-wO-KOD" firstAttribute="top" secondItem="cMo-rH-ERd" secondAttribute="bottom" id="ohb-Xq-JYV"/>
+                                            <constraint firstItem="zlZ-Wj-BwB" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="rvV-vI-Dw9"/>
                                             <constraint firstItem="cMo-rH-ERd" firstAttribute="leading" secondItem="vk5-vj-W5O" secondAttribute="leading" constant="10" id="sog-Kp-HbC"/>
                                             <constraint firstAttribute="trailing" secondItem="j9O-cI-7Te" secondAttribute="trailing" constant="10" id="xpQ-GM-8fr"/>
+                                            <constraint firstItem="zlZ-Wj-BwB" firstAttribute="top" secondItem="j9O-cI-7Te" secondAttribute="bottom" constant="10" id="zqV-5R-J0i"/>
                                         </constraints>
                                     </view>
                                 </subviews>
