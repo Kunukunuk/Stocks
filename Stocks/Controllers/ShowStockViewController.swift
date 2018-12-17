@@ -28,6 +28,8 @@ class ShowStockViewController: UIViewController {
     @IBOutlet weak var sectorLabel: UILabel!
     @IBOutlet weak var exchangeLabel: UILabel!
     
+    var stockData: StockInformationData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +37,24 @@ class ShowStockViewController: UIViewController {
         companyNameLabel.text = stockInfo?.stockName
     }
     
+    
+    func getStockInfos() {
+        
+        APIManager().getStockData(with: (stockInfo?.stockSymbol)!) { (stockData, error) in
+            if error == nil {
+                self.stockData = stockData
+                DispatchQueue.main.sync {
+                    self.fillTheInformations()
+                }
+            }
+        }
+    }
+    
+    func fillTheInformations() {
+        let quote = (stockData?.stockQuote)!
+        
+        openLabel.text = "Open: \(quote["open"] as! Double)"
+    }
 
     /*
     // MARK: - Navigation

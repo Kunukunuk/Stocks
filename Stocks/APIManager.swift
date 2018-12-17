@@ -42,7 +42,7 @@ class APIManager {
         task.resume()
     }
     
-    func getStockData(with symbols: String) {
+    func getStockData(with symbols: String, completion: @escaping (StockInformationData?, Error?) -> ()) {
         
 //        /stock/aapl/batch?types=quote,news,chart&range=1m&last=1
 //        /stock/market/batch?symbols=aapl,fb,tsla&types=quote,news,chart&range=1m&last=5
@@ -51,6 +51,7 @@ class APIManager {
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             guard let dataJson = data else {
                 print(error?.localizedDescription)
+                completion(nil, error)
                 return
             }
             let dataDictionary = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
@@ -59,7 +60,11 @@ class APIManager {
             let quote = dataDictionary["quote"] as! [String: Any]
             let news = dataDictionary["news"] as! NSArray
             
+            let stockInfo = StockInformationData(charts: chart, news: news, quote: quote)
+            
             print("\(chart) \n****** \(quote) \n***** \(news)")
+            
+            completion(stockInfo, nil)
         }
         task.resume()
         
