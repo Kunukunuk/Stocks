@@ -57,18 +57,18 @@ class ShowStockViewController: UIViewController {
     func fillTheInformations() {
         let quote = (stockData?.stockQuote)!
         
-        openLabel.text = "Open: \(quote["open"] as! Double)"
-        highLabel.text = "High: \(quote["high"] as! Double)"
-        lowLabel.text = "Low: \(quote["low"] as! Double)"
-        weekHighLabel.text = "52WKHigh: \(quote["week52High"] as! Double)"
-        weekLowLabel.text = "52WKLow: \(quote["week52Low"] as! Double)"
-        volumeLabel.text = "LatestVol: \(quote["latestVolume"] as! Int)"
-        avgVolLabel.text = "AVGVol: \(quote["avgTotalVolume"] as! Int)"
-        mktCapLabel.text = "MKT Cap: \(quote["marketCap"] as! Int)"
-        peRatioLabel.text = "PE Ratio: \(quote["peRatio"] as! Double)"
-        ytdChangeLabel.text = "YTD Change: \(quote["ytdChange"] as! Double)"
-        sectorLabel.text = "Sector: \(quote["sector"] as! String)"
-        exchangeLabel.text = "Exchange: \(quote["primaryExchange"] as! String)"
+        openLabel.text = "Open: \(quote["open"] as? Double ?? 0)"
+        highLabel.text = "High: \(quote["high"] as? Double ?? 0)"
+        lowLabel.text = "Low: \(quote["low"] as? Double ?? 0)"
+        weekHighLabel.text = "52WKHigh: \(quote["week52High"] as? Double ?? 0)"
+        weekLowLabel.text = "52WKLow: \(quote["week52Low"] as? Double ?? 0)"
+        volumeLabel.text = "LatestVol: \(quote["latestVolume"] as? Int ?? 0)"
+        avgVolLabel.text = "AVGVol: \(quote["avgTotalVolume"] as? Int ?? 0)"
+        mktCapLabel.text = "MKT Cap: \(quote["marketCap"] as? Int ?? 0)"
+        peRatioLabel.text = "PE Ratio: \(quote["peRatio"] as? Double ?? 0)"
+        ytdChangeLabel.text = "YTD Change: \(quote["ytdChange"] as? Double ?? 0)"
+        sectorLabel.text = "Sector: \(quote["sector"] as? String ?? "")"
+        exchangeLabel.text = "Exchange: \(quote["primaryExchange"] as? String ?? "")"
     }
 
     /*
