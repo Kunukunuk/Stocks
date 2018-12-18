@@ -80,6 +80,7 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     func fillTheInformations() {
         let quote = (stockData?.stockQuote)!
         
+        priceLabel.text = "\(quote["latestPrice"] as? Double ?? 0)"
         openLabel.text = "Open: \(quote["open"] as? Double ?? 0)"
         highLabel.text = "High: \(quote["high"] as? Double ?? 0)"
         lowLabel.text = "Low: \(quote["low"] as? Double ?? 0)"
