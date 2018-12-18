@@ -8,7 +8,8 @@ Uses the IExTrading API to get data to display stcoks in a list
 
 - [X] Get current and upcoming IPOs
 - [X] Get current cryptocurrency
-- [ ] See stock information and search for stocks
+- [X] See stock information for given symbol
+- [ ] Search for stocks
 
 ## Video Walkthrough
 
@@ -17,7 +18,7 @@ Here's a walkthrough of implemented user stories:
 ![stocksbeg](https://user-images.githubusercontent.com/28847045/49911974-692d0200-fe56-11e8-8902-cba6a27dc7b1.gif)
 ![stocksiex](https://user-images.githubusercontent.com/28847045/49899194-05d8ab00-fe29-11e8-958c-d968f93fbf13.gif)
 ![stockscry](https://user-images.githubusercontent.com/28847045/49911978-6e8a4c80-fe56-11e8-9f54-30e4748c1e6e.gif)
-![stockshowstock](https://user-images.githubusercontent.com/28847045/50064427-21bcb380-017f-11e9-996e-fa38df50565c.gif)
+![stockshowstock](https://user-images.githubusercontent.com/28847045/50127328-b76b4800-023e-11e9-87bd-df7983ec723e.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
