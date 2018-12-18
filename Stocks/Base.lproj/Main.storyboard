@@ -242,7 +242,7 @@
                                                 <rect key="frame" x="10" y="358" width="355" height="245"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="156" id="Pev-Ya-nVk">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockChartCell" rowHeight="156" id="Pev-Ya-nVk" customClass="StockChartCell" customModule="Stocks" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="355" height="156"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pev-Ya-nVk" id="NKO-eu-KUn">
@@ -311,6 +311,15 @@
                                                                 <constraint firstItem="YOu-8p-rBY" firstAttribute="top" secondItem="NKO-eu-KUn" secondAttribute="topMargin" constant="5" id="zer-yS-1aq"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="changeLabel" destination="Gb3-31-wiE" id="Igx-zX-gPx"/>
+                                                            <outlet property="closeLabel" destination="Srl-qz-kCE" id="Biu-0K-UOy"/>
+                                                            <outlet property="dateLabel" destination="YOu-8p-rBY" id="Xhf-ME-V6y"/>
+                                                            <outlet property="highLabel" destination="2gU-J2-8Vi" id="ZR3-9L-H5h"/>
+                                                            <outlet property="lowLabel" destination="SYa-FA-RSx" id="jRe-tl-gEv"/>
+                                                            <outlet property="openLabel" destination="c1j-Ts-jTx" id="IVQ-u1-rwb"/>
+                                                            <outlet property="volumeLabel" destination="7bD-QK-657" id="Tii-p8-IES"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>

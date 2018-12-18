@@ -8,7 +8,24 @@
 
 import UIKit
 
-class ShowStockViewController: UIViewController {
+class ShowStockViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stockData?.stockCharts?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StockChartCell", for: indexPath) as! StockChartCell
+        
+        if let chartss = stockData?.stockCharts {
+            
+            let dict = chartss[indexPath.row] as! [String: Any]
+            cell.stock = dict
+        }
+        
+        return cell
+    }
+    
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -35,6 +52,9 @@ class ShowStockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         self.title = stockInfo?.stockSymbol
         companyNameLabel.text = stockInfo?.stockName
         
@@ -49,6 +69,7 @@ class ShowStockViewController: UIViewController {
                 self.stockData = stockData
                 DispatchQueue.main.sync {
                     self.fillTheInformations()
+                    self.tableView.reloadData()
                 }
             } else {
                 print("error : \(error?.localizedDescription)")
