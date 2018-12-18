@@ -62,8 +62,6 @@ class APIManager {
             
             let stockInfo = StockInformationData(charts: chart, news: news, quote: quote)
             
-            print("\(chart) \n****** \(quote) \n***** \(news)")
-            
             completion(stockInfo, nil)
         }
         task.resume()
