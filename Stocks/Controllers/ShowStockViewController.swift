@@ -11,6 +11,8 @@ import UIKit
 class ShowStockViewController: UIViewController {
 
     
+    @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var companyNameLabel: UILabel!
     var stockInfo: StockSymbols?
     @IBOutlet weak var priceLabel: UILabel!
