@@ -10,6 +10,13 @@ import UIKit
 
 class SearchCell: UITableViewCell {
 
+    @IBOutlet weak var stockNameLabel: UILabel!
+    
+    var stockInfo: StockSymbols? {
+        didSet {
+            stockNameLabel.text = "\(stockInfo?.stockName ?? "") (\(stockInfo?.stockSymbol ?? ""))"
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

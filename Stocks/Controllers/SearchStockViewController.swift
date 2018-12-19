@@ -27,6 +27,8 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
 
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     var stockSymbols: [StockSymbols] = []
     var selected: StockSymbols?
     @IBOutlet weak var searchTextField: UITextField!
@@ -36,6 +38,9 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         getStockSymbols()
     }
@@ -57,7 +62,7 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
         if searchTextField.text == "" {
             performSegue(withIdentifier: "showStock", sender: self)
         } else {
-            performSegue(withIdentifier: "searchStock", sender: self)
+            
         }
         
     }
@@ -66,11 +71,26 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
         if segue.identifier == "showStock" {
             let destinationVC = segue.destination as! ShowStockViewController
             destinationVC.stockInfo = self.selected
-        } else if segue.identifier == "searchStock" {
-            let destinationVC = segue.destination as! SearchResultViewController
-            destinationVC.stockInfo = self.stockSymbols
-            destinationVC.searchedText = self.searchTextField.text
         }
     }
 
+}
+
+extension SearchStockViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return stockSymbols.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
+        
+        
+        return cell
+    }
+    
+    
+    
+    
 }

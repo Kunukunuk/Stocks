@@ -30,7 +30,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="58" id="2b4-pM-xTB" customClass="SearchCell" customModule="Stocks" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="58" id="2b4-pM-xTB" customClass="SearchCell" customModule="Stocks" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="365" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2b4-pM-xTB" id="p1y-Rh-8QV">
@@ -51,6 +51,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="FOv-i1-Ihu" secondAttribute="trailing" id="wsA-Sm-eGS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="stockNameLabel" destination="FOv-i1-Ihu" id="Th7-GK-16Z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -70,6 +73,8 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="OB9-NO-j83" id="s66-Bv-dDJ"/>
+                        <outlet property="searchBar" destination="ikk-O1-QbC" id="iUY-PG-9fg"/>
+                        <outlet property="tableView" destination="mTG-WX-DaF" id="Skz-1i-aCb"/>
                         <segue destination="bMt-HF-uQf" kind="show" identifier="showStock" id="MHs-cE-HJl"/>
                     </connections>
                 </viewController>
