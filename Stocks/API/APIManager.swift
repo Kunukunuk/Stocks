@@ -94,6 +94,19 @@ class APIManager {
     
     func getStockCompany() {
 //        /stock/aapl/company
+        
+        let apiURL = URL(string: basicURL + "/stock/aapl/company")
+        let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
+            guard let dataJson = data else {
+                print(error?.localizedDescription)
+                return
+            }
+            let dataArray = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
+            print(dataArray)
+            
+            //print(dataArray)
+        }
+        task.resume()
     }
     
     func getCrypto(completion: @escaping ([CryptoData]?, Error?) -> ()) {

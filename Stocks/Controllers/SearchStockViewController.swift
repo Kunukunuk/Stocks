@@ -63,15 +63,11 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
 
-    /*@IBAction func searchStock(_ sender: UIButton) {
+    @IBAction func searchStock(_ sender: UIButton) {
         
-        if searchTextField.text == "" {
-            performSegue(withIdentifier: "showStock", sender: self)
-        } else {
-            
-        }
+        performSegue(withIdentifier: "showStock", sender: self)
         
-    }*/
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showStock" {

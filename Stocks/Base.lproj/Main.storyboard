@@ -22,7 +22,7 @@
                                 <rect key="frame" x="5" y="69" width="365" height="301.5"/>
                             </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mTG-WX-DaF">
-                                <rect key="frame" x="5" y="375.5" width="365" height="291.5"/>
+                                <rect key="frame" x="5" y="405.5" width="365" height="261.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="ikk-O1-QbC">
                                     <rect key="frame" x="0.0" y="0.0" width="365" height="56"/>
@@ -57,16 +57,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3Y-TE-EMS">
+                                <rect key="frame" x="5" y="375.5" width="365" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchStock:" destination="hGj-RO-cWK" eventType="touchUpInside" id="mlh-mq-YD3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mTG-WX-DaF" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="5" id="Chc-Nn-qKd"/>
+                            <constraint firstItem="A3Y-TE-EMS" firstAttribute="top" secondItem="OB9-NO-j83" secondAttribute="bottom" constant="5" id="CtF-Nu-Rb2"/>
+                            <constraint firstItem="A3Y-TE-EMS" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="5" id="GFb-wH-ZNd"/>
                             <constraint firstItem="OB9-NO-j83" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="5" id="Klw-fj-RkT"/>
                             <constraint firstItem="EgS-KZ-vF1" firstAttribute="trailing" secondItem="mTG-WX-DaF" secondAttribute="trailing" constant="5" id="Ll3-fS-dU7"/>
-                            <constraint firstItem="mTG-WX-DaF" firstAttribute="top" secondItem="OB9-NO-j83" secondAttribute="bottom" constant="5" id="akG-TP-YN5"/>
+                            <constraint firstItem="EgS-KZ-vF1" firstAttribute="trailing" secondItem="A3Y-TE-EMS" secondAttribute="trailing" constant="5" id="MJq-Jt-kKo"/>
                             <constraint firstAttribute="trailing" secondItem="OB9-NO-j83" secondAttribute="trailing" constant="5" id="c0B-CR-L2j"/>
                             <constraint firstItem="OB9-NO-j83" firstAttribute="top" secondItem="EgS-KZ-vF1" secondAttribute="top" constant="5" id="hwb-vZ-5gH"/>
                             <constraint firstItem="OB9-NO-j83" firstAttribute="height" secondItem="EgS-KZ-vF1" secondAttribute="height" multiplier="1:2" id="kHi-1e-wXo"/>
+                            <constraint firstItem="mTG-WX-DaF" firstAttribute="top" secondItem="A3Y-TE-EMS" secondAttribute="bottom" id="qgG-Di-pdd"/>
                             <constraint firstItem="EgS-KZ-vF1" firstAttribute="bottom" secondItem="mTG-WX-DaF" secondAttribute="bottom" id="rR8-Mf-XyG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EgS-KZ-vF1"/>

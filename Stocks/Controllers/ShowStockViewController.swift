@@ -55,13 +55,22 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.title = stockInfo?.stockSymbol
+        
+        let button = UIButton(type: .custom)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitle(stockInfo?.stockSymbol, for: .normal)
+        button.addTarget(self, action: #selector(self.clickOnTitle), for: .touchUpInside)
+        
+        self.navigationItem.titleView = button
         companyNameLabel.text = stockInfo?.stockName
         
         getStockInfos()
     }
     
-    
+    @IBAction func clickOnTitle(button: UIButton) {
+        print("hello")
+    }
     func getStockInfos() {
         
         APIManager().getStockData(with: (stockInfo?.stockSymbol)!) { (stockData, error) in
