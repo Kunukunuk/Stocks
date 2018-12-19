@@ -31,6 +31,8 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var searchBar: UISearchBar!
     var stockSymbols: [StockSymbols] = []
     var selected: StockSymbols?
+    var filterData: [StockSymbols] = []
+    var isSearching: Bool = false
     @IBOutlet weak var searchTextField: UITextField!
     
     override func viewDidLoad() {
@@ -42,6 +44,8 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
         tableView.delegate = self
         tableView.dataSource = self
         
+        searchBar.delegate = self
+        
         getStockSymbols()
     }
     
@@ -52,6 +56,7 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 DispatchQueue.main.sync {
                     self.pickerView.reloadAllComponents()
                     self.selected = self.stockSymbols[0]
+                    self.filterData = self.stockSymbols
                     self.tableView.reloadData()
                 }
             }
@@ -81,18 +86,44 @@ extension SearchStockViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return stockSymbols.count
+        return filterData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
         
-        cell.stockInfo = stockSymbols[indexPath.row]
+        cell.stockInfo = filterData[indexPath.row]
         
         return cell
     }
     
+}
+
+extension SearchStockViewController: UISearchBarDelegate {
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        isSearching = false
+    }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText == "" {
+            isSearching = false
+            filterData = stockSymbols
+            tableView.reloadData()
+        } else {
+            isSearching = true
+            filterData = stockSymbols.filter {
+                (($0.stockName)?.lowercased().contains(searchText.lowercased()))!
+            }
+            tableView.reloadData()
+        }
+    }
 }
