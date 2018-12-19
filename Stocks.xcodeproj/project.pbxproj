@@ -22,9 +22,9 @@
 		0D76378721A8E17500A5362D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D76378521A8E17500A5362D /* LaunchScreen.storyboard */; };
 		0D76378F21A8E1A200A5362D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D76378E21A8E1A200A5362D /* APIManager.swift */; };
 		0D79F82F21C7405F008EDE53 /* StockInformationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D79F82E21C7405F008EDE53 /* StockInformationData.swift */; };
+		0DED06D221C9CF91004F24C0 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DED06D121C9CF91004F24C0 /* SearchCell.swift */; };
 		0DF5526321C2E5C1005883F7 /* StockSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5526221C2E5C1005883F7 /* StockSymbols.swift */; };
 		0DF5526521C2E7A9005883F7 /* SearchStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5526421C2E7A9005883F7 /* SearchStockViewController.swift */; };
-		0DF5526721C320CD005883F7 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5526621C320CD005883F7 /* SearchResultViewController.swift */; };
 		0DF5526921C320DD005883F7 /* ShowStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5526821C320DD005883F7 /* ShowStockViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,9 +46,9 @@
 		0D76378821A8E17500A5362D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D76378E21A8E1A200A5362D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		0D79F82E21C7405F008EDE53 /* StockInformationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInformationData.swift; sourceTree = "<group>"; };
+		0DED06D121C9CF91004F24C0 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		0DF5526221C2E5C1005883F7 /* StockSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbols.swift; sourceTree = "<group>"; };
 		0DF5526421C2E7A9005883F7 /* SearchStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStockViewController.swift; sourceTree = "<group>"; };
-		0DF5526621C320CD005883F7 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		0DF5526821C320DD005883F7 /* ShowStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +71,6 @@
 				0D1298BD21C18BD100408DCF /* TodayIPOViewController.swift */,
 				0D1298C921C1B49500408DCF /* CryptoViewController.swift */,
 				0DF5526421C2E7A9005883F7 /* SearchStockViewController.swift */,
-				0DF5526621C320CD005883F7 /* SearchResultViewController.swift */,
 				0DF5526821C320DD005883F7 /* ShowStockViewController.swift */,
 			);
 			path = Controllers;
@@ -83,6 +82,7 @@
 				0D1298BF21C18F3E00408DCF /* IPOCell.swift */,
 				0D1298C721C1B47900408DCF /* CryptoCell.swift */,
 				0D457C9321C880E300E1FC1D /* StockChartCell.swift */,
+				0DED06D121C9CF91004F24C0 /* SearchCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DF5526321C2E5C1005883F7 /* StockSymbols.swift in Sources */,
+				0DED06D221C9CF91004F24C0 /* SearchCell.swift in Sources */,
 				0D76378F21A8E1A200A5362D /* APIManager.swift in Sources */,
 				0D76377F21A8E17300A5362D /* ViewController.swift in Sources */,
 				0DF5526521C2E7A9005883F7 /* SearchStockViewController.swift in Sources */,
@@ -223,7 +224,6 @@
 				0D79F82F21C7405F008EDE53 /* StockInformationData.swift in Sources */,
 				0D1298BC21C18BB100408DCF /* UpcomingIPOViewController.swift in Sources */,
 				0D1298C621C1B2FF00408DCF /* CryptoData.swift in Sources */,
-				0DF5526721C320CD005883F7 /* SearchResultViewController.swift in Sources */,
 				0D1298C221C1911E00408DCF /* IPOData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

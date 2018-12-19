@@ -67,7 +67,9 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let destinationVC = segue.destination as! ShowStockViewController
             destinationVC.stockInfo = self.selected
         } else if segue.identifier == "searchStock" {
-            
+            let destinationVC = segue.destination as! SearchResultViewController
+            destinationVC.stockInfo = self.stockSymbols
+            destinationVC.searchedText = self.searchTextField.text
         }
     }
 

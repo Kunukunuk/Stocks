@@ -10,21 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Result View Controller-->
-        <scene sceneID="RXp-Br-CeC">
-            <objects>
-                <viewController id="pf9-c7-gua" customClass="SearchResultViewController" customModule="Stocks" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ATZ-IA-vyh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ZtM-pO-2Gb"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NbN-hO-Zj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1076" y="-1397"/>
-        </scene>
         <!--Search Stock View Controller-->
         <scene sceneID="acC-Uq-iEq">
             <objects>
@@ -33,49 +18,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLX-rD-x4u">
-                                <rect key="frame" x="5" y="350.5" width="365" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVe-V5-kSI">
-                                <rect key="frame" x="20" y="390.5" width="335" height="30"/>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="searchStock:" destination="hGj-RO-cWK" eventType="touchUpInside" id="oAo-az-Ldf"/>
-                                </connections>
-                            </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OB9-NO-j83">
-                                <rect key="frame" x="5" y="69" width="365" height="276.5"/>
+                                <rect key="frame" x="5" y="69" width="365" height="301.5"/>
                             </pickerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mTG-WX-DaF">
+                                <rect key="frame" x="5" y="375.5" width="365" height="291.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="ikk-O1-QbC">
+                                    <rect key="frame" x="0.0" y="0.0" width="365" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="58" id="2b4-pM-xTB" customClass="SearchCell" customModule="Stocks" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="84" width="365" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2b4-pM-xTB" id="p1y-Rh-8QV">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="57.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOv-i1-Ihu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="365" height="30"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FOv-i1-Ihu" firstAttribute="top" secondItem="p1y-Rh-8QV" secondAttribute="top" id="OJH-Dk-U2A"/>
+                                                <constraint firstItem="FOv-i1-Ihu" firstAttribute="leading" secondItem="p1y-Rh-8QV" secondAttribute="leading" id="Qg4-e4-5Kf"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FOv-i1-Ihu" secondAttribute="bottom" id="Sz4-70-QSA"/>
+                                                <constraint firstAttribute="trailing" secondItem="FOv-i1-Ihu" secondAttribute="trailing" id="wsA-Sm-eGS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GLX-rD-x4u" firstAttribute="centerY" secondItem="EgS-KZ-vF1" secondAttribute="centerY" id="Fl6-qW-6gC"/>
-                            <constraint firstItem="GLX-rD-x4u" firstAttribute="centerX" secondItem="EgS-KZ-vF1" secondAttribute="centerX" id="Jaa-BO-iJD"/>
+                            <constraint firstItem="mTG-WX-DaF" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="5" id="Chc-Nn-qKd"/>
                             <constraint firstItem="OB9-NO-j83" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="5" id="Klw-fj-RkT"/>
-                            <constraint firstItem="OVe-V5-kSI" firstAttribute="top" secondItem="GLX-rD-x4u" secondAttribute="bottom" constant="10" id="P8d-ze-KPK"/>
-                            <constraint firstItem="OVe-V5-kSI" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="20" id="PrB-3B-3Wr"/>
-                            <constraint firstItem="EgS-KZ-vF1" firstAttribute="trailing" secondItem="OVe-V5-kSI" secondAttribute="trailing" constant="20" id="ZIF-RU-VeZ"/>
+                            <constraint firstItem="EgS-KZ-vF1" firstAttribute="trailing" secondItem="mTG-WX-DaF" secondAttribute="trailing" constant="5" id="Ll3-fS-dU7"/>
+                            <constraint firstItem="mTG-WX-DaF" firstAttribute="top" secondItem="OB9-NO-j83" secondAttribute="bottom" constant="5" id="akG-TP-YN5"/>
                             <constraint firstAttribute="trailing" secondItem="OB9-NO-j83" secondAttribute="trailing" constant="5" id="c0B-CR-L2j"/>
                             <constraint firstItem="OB9-NO-j83" firstAttribute="top" secondItem="EgS-KZ-vF1" secondAttribute="top" constant="5" id="hwb-vZ-5gH"/>
-                            <constraint firstItem="GLX-rD-x4u" firstAttribute="leading" secondItem="EgS-KZ-vF1" secondAttribute="leading" constant="5" id="mfU-G2-dKi"/>
-                            <constraint firstItem="EgS-KZ-vF1" firstAttribute="trailing" secondItem="GLX-rD-x4u" secondAttribute="trailing" constant="5" id="nqg-Kn-chH"/>
-                            <constraint firstItem="GLX-rD-x4u" firstAttribute="top" secondItem="OB9-NO-j83" secondAttribute="bottom" constant="5" id="vFB-xe-xrv"/>
+                            <constraint firstItem="OB9-NO-j83" firstAttribute="height" secondItem="EgS-KZ-vF1" secondAttribute="height" multiplier="1:2" id="kHi-1e-wXo"/>
+                            <constraint firstItem="EgS-KZ-vF1" firstAttribute="bottom" secondItem="mTG-WX-DaF" secondAttribute="bottom" id="rR8-Mf-XyG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EgS-KZ-vF1"/>
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="OB9-NO-j83" id="s66-Bv-dDJ"/>
-                        <outlet property="searchTextField" destination="GLX-rD-x4u" id="BWz-EG-B8f"/>
-                        <segue destination="pf9-c7-gua" kind="show" identifier="searchStock" id="7mG-b9-fd6"/>
                         <segue destination="bMt-HF-uQf" kind="show" identifier="showStock" id="MHs-cE-HJl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgH-mU-i48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="-663"/>
+            <point key="canvasLocation" x="1077.5999999999999" y="-663.41829085457277"/>
         </scene>
         <!--Show Stock View Controller-->
         <scene sceneID="8Ed-LI-2bt">
