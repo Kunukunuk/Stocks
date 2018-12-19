@@ -63,7 +63,7 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
 
-    @IBAction func searchStock(_ sender: UIButton) {
+    /*@IBAction func searchStock(_ sender: UIButton) {
         
         if searchTextField.text == "" {
             performSegue(withIdentifier: "showStock", sender: self)
@@ -71,7 +71,7 @@ class SearchStockViewController: UIViewController, UIPickerViewDelegate, UIPicke
             
         }
         
-    }
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showStock" {
@@ -95,6 +95,11 @@ extension SearchStockViewController: UITableViewDataSource, UITableViewDelegate 
         cell.stockInfo = filterData[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selected = filterData[indexPath.row]
+        performSegue(withIdentifier: "showStock", sender: self)
     }
     
 }
