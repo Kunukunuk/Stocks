@@ -121,7 +121,7 @@ extension SearchStockViewController: UISearchBarDelegate {
         } else {
             isSearching = true
             filterData = stockSymbols.filter {
-                (($0.stockName)?.lowercased().contains(searchText.lowercased()))!
+                ( (($0.stockName)?.lowercased().contains(searchText.lowercased()))! || (($0.stockSymbol)?.lowercased().contains(searchText.lowercased()))!)
             }
             tableView.reloadData()
         }
