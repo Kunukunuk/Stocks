@@ -47,6 +47,9 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var sectorLabel: UILabel!
     @IBOutlet weak var exchangeLabel: UILabel!
     
+    @IBOutlet weak var popUpConstraint: NSLayoutConstraint!
+    @IBOutlet weak var popUpView: UIView!
+    
     var stockData: StockInformationData?
     
     override func viewDidLoad() {
@@ -55,6 +58,8 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+        popUpView.layer.cornerRadius = 15
+        popUpView.layer.masksToBounds = true
         
         let button = UIButton(type: .custom)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
@@ -69,6 +74,11 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func clickOnTitle(button: UIButton) {
+        popUpConstraint.constant = 0
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
         print("hello")
     }
     
