@@ -20,7 +20,7 @@ Here's a walkthrough of implemented user stories:
 ![stockscry](https://user-images.githubusercontent.com/28847045/49911978-6e8a4c80-fe56-11e8-9f54-30e4748c1e6e.gif)
 ![stockshowstock](https://user-images.githubusercontent.com/28847045/50127328-b76b4800-023e-11e9-87bd-df7983ec723e.gif)
 ![stocksearch](https://user-images.githubusercontent.com/28847045/50195896-f799fb80-030e-11e9-94a6-bf4302752d2d.gif)
-![stocksearchpopup](https://user-images.githubusercontent.com/28847045/50315108-6b5b1600-047f-11e9-9b83-1076780fc119.gif)
+![stocksearchpopup](https://user-images.githubusercontent.com/28847045/50315422-b88bb780-0480-11e9-85cf-3b4b4ce97110.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
