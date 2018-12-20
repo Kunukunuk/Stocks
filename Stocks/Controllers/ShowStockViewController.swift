@@ -60,6 +60,7 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
 
         popUpConstraint.constant = -500
+        //popUpView.sizeToFit()
         
         tableView.delegate = self
         tableView.dataSource = self
