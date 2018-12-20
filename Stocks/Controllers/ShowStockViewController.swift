@@ -52,10 +52,13 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var companyNamePopupLabel: UILabel!
     @IBOutlet weak var tagPopupLabel: UILabel!
     @IBOutlet weak var descriptionPopupLabel: UILabel!
-    @IBOutlet weak var websitePopupLabel: UILabel!
+    //@IBOutlet weak var websitePopupLabel: UILabel!
     @IBOutlet weak var ceoPopupLabel: UILabel!
     @IBOutlet weak var industryPopupLabel: UILabel!
     @IBOutlet weak var sectorPopupLabel: UILabel!
+    @IBOutlet weak var popupWebsiteButton: UIButton!
+    
+    
     var isShowingPopup: Bool = false
     
     
@@ -112,6 +115,22 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    @IBAction func showCompanyWebsite(_ sender: UIButton) {
+        
+        let url = sender.titleLabel?.text
+        
+        guard let openURL = URL(string: url!) else {
+            return
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(openURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(openURL)
+        }
+    }
+    
+    
     func getCompanyInfo(symbol: String) {
         APIManager().getStockCompany(with: symbol) { (companyInfo, error) in
             if error == nil {
@@ -121,7 +140,8 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
                     self.descriptionPopupLabel.text = companyInfo!.description
                     self.ceoPopupLabel.text = companyInfo!.ceo
                     self.sectorPopupLabel.text = companyInfo!.sector
-                    self.websitePopupLabel.text = companyInfo!.website
+                    self.popupWebsiteButton.setTitle(companyInfo!.website, for: .normal)
+                    //self.websitePopupLabel.text = companyInfo!.website
                     self.industryPopupLabel.text = companyInfo!.industry
                 }
             } else {
