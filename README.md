@@ -2,7 +2,7 @@
 
 **Stocks** is an iOS app using the https://iextrading.com/developer/docs/ api to get information about stocks.
 
-Time spent: **25** hours spent in total
+Time spent: **30** hours spent in total
 
 Uses the IExTrading API to get data to display stcoks in a list
 
