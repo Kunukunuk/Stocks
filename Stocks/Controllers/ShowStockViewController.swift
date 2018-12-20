@@ -119,6 +119,10 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
                     self.companyNamePopupLabel.text = companyInfo!.companyName
                     self.tagPopupLabel.text = companyInfo!.tags
                     self.descriptionPopupLabel.text = companyInfo!.description
+                    self.ceoPopupLabel.text = companyInfo!.ceo
+                    self.sectorPopupLabel.text = companyInfo!.sector
+                    self.websitePopupLabel.text = companyInfo!.website
+                    self.industryPopupLabel.text = companyInfo!.industry
                 }
             } else {
                 print(error?.localizedDescription)
