@@ -71,6 +71,7 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func clickOnTitle(button: UIButton) {
         print("hello")
     }
+    
     func getStockInfos() {
         
         APIManager().getStockData(with: (stockInfo?.stockSymbol)!) { (stockData, error) in
