@@ -52,6 +52,10 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var companyNamePopupLabel: UILabel!
     @IBOutlet weak var tagPopupLabel: UILabel!
     @IBOutlet weak var descriptionPopupLabel: UILabel!
+    @IBOutlet weak var websitePopupLabel: UILabel!
+    @IBOutlet weak var ceoPopupLabel: UILabel!
+    @IBOutlet weak var industryPopupLabel: UILabel!
+    @IBOutlet weak var sectorPopupLabel: UILabel!
     var isShowingPopup: Bool = false
     
     
@@ -106,16 +110,6 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
             
             isShowingPopup = true
         }
-    }
-    
-    
-    @IBAction func dismissPopup(_ sender: UIButton) {
-        
-        popUpConstraint.constant = -500
-        
-        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
     }
     
     func getCompanyInfo(symbol: String) {
