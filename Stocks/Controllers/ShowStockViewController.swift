@@ -52,6 +52,7 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var companyNamePopupLabel: UILabel!
     @IBOutlet weak var tagPopupLabel: UILabel!
     @IBOutlet weak var descriptionPopupLabel: UILabel!
+    var isShowingPopup: Bool = false
     
     
     var stockData: StockInformationData?
@@ -81,13 +82,30 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func clickOnTitle(button: UIButton) {
-        popUpConstraint.constant = 0
-        
-        UIView.animate(withDuration: 0.4, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
-        getCompanyInfo(symbol: (stockInfo?.stockSymbol)!)
+        if isShowingPopup {
+            
+            popUpConstraint.constant = -500
+            
+            UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+            
+            popUpView.alpha = 0
+            isShowingPopup = false
+            
+        } else {
+            popUpConstraint.constant = 0
+            
+            popUpView.alpha = 1
+            
+            UIView.animate(withDuration: 0.4, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+            
+            getCompanyInfo(symbol: (stockInfo?.stockSymbol)!)
+            
+            isShowingPopup = true
+        }
     }
     
     
