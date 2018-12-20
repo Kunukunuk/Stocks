@@ -86,6 +86,7 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
             self.view.layoutIfNeeded()
         }, completion: nil)
         
+        getCompanyInfo(symbol: (stockInfo?.stockSymbol)!)
     }
     
     
@@ -96,6 +97,20 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
         UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    func getCompanyInfo(symbol: String) {
+        APIManager().getStockCompany(with: symbol) { (companyInfo, error) in
+            if error == nil {
+                DispatchQueue.main.sync {
+                    self.companyNamePopupLabel.text = companyInfo!.companyName
+                    self.tagPopupLabel.text = companyInfo!.tags
+                    self.descriptionPopupLabel.text = companyInfo!.description
+                }
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
     
     func getStockInfos() {

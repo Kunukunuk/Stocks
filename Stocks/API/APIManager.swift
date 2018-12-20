@@ -92,18 +92,20 @@ class APIManager {
 //        /stock/aapl/chart/dynamic
     }
     
-    func getStockCompany() {
+    func getStockCompany(with symbol: String, completion: @escaping (CompanyInfo?, Error?) -> ()) {
 //        /stock/aapl/company
         
-        let apiURL = URL(string: basicURL + "/stock/aapl/company")
+        let apiURL = URL(string: basicURL + "/stock/\(symbol)/company")
         let task = URLSession.shared.dataTask(with: apiURL!) { (data, response, error) in
             guard let dataJson = data else {
                 print(error?.localizedDescription)
+                completion(nil, error)
                 return
             }
             let dataDict = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
             
             let company = CompanyInfo(dict: dataDict)
+            completion(company, nil)
             
         }
         task.resume()
