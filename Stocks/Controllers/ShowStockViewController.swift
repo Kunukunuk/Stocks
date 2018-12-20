@@ -49,12 +49,18 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var popUpConstraint: NSLayoutConstraint!
     @IBOutlet weak var popUpView: UIView!
+    @IBOutlet weak var companyNamePopupLabel: UILabel!
+    @IBOutlet weak var tagPopupLabel: UILabel!
+    @IBOutlet weak var descriptionPopupLabel: UILabel!
+    
     
     var stockData: StockInformationData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        popUpConstraint.constant = -500
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -76,10 +82,20 @@ class ShowStockViewController: UIViewController, UITableViewDataSource, UITableV
     @IBAction func clickOnTitle(button: UIButton) {
         popUpConstraint.constant = 0
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
-        })
-        print("hello")
+        }, completion: nil)
+        
+    }
+    
+    
+    @IBAction func dismissPopup(_ sender: UIButton) {
+        
+        popUpConstraint.constant = -500
+        
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     func getStockInfos() {

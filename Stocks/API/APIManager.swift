@@ -101,10 +101,10 @@ class APIManager {
                 print(error?.localizedDescription)
                 return
             }
-            let dataArray = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
-            print(dataArray)
+            let dataDict = try! JSONSerialization.jsonObject(with: dataJson, options: []) as! [String: Any]
             
-            //print(dataArray)
+            let company = CompanyInfo(dict: dataDict)
+            
         }
         task.resume()
     }
