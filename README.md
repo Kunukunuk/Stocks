@@ -10,6 +10,7 @@ Uses the IExTrading API to get data to display stcoks in a list
 - [X] Get current cryptocurrency
 - [X] See stock information for given symbol
 - [X] Search for stocks
+- [X] Search for a company
 
 ## Video Walkthrough
 
